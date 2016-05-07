@@ -8,6 +8,16 @@
 
 import UIKit
 
+protocol View {}
+extension UIView: View {}
+
+extension View  {
+    func apply(style: Style<Self>) -> Self {
+        style.stylize(self)
+        return self
+    }
+}
+
 class Style<T> {
     let stylize: (T -> Void)
     

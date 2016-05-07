@@ -16,6 +16,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let styleV: Style<UIView> = BackgroundColor(color: UIColor.redColor()) + RoundedCorners(radius: 10.0)
+        let styleL: Style<UILabel> = styleV as! Style<UILabel>
+        
+        label0.apply(styleV)
+        
+//        let style0 = BackgroundColor<UILabel>(color: UIColor.blueColor())
+//        let style1 = TextColor(color: UIColor.redColor())
+        
+//        let stylex = (style0 + style1)
+        
         AppStyles.NormalLabelStyle.stylize(label0)
         AppStyles.SelectedLabelStyle.stylize(label1)
     }
