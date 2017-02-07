@@ -2,7 +2,7 @@
 
 Small pieces of code which I'm using in many of my projects.
 
-## Style
+## 1. Style
 
 Simple class for creating and combining styles for UI controls.
 
@@ -23,4 +23,22 @@ let defaultLabelStyle = labelTextStyle + labelBorderStyle
 let label = UILabel()
 label.text = "Sample text"
 label.apply(style: defaultLabelStyle)
+```
+
+## 2. Result
+
+Result type for Swift.
+
+Example:
+
+``` swift
+enum SomeError: Error {}
+
+let result: Result<Int, SomeError> = .success(42)
+
+result.ifSuccess { value in
+    print("Success")
+}.else { error in
+    print("Failure")
+}
 ```
