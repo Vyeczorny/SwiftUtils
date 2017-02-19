@@ -42,3 +42,25 @@ result.ifSuccess { value in
     print("Failure")
 }
 ```
+
+## 3. ReusableIdentifier
+
+A set of extensions, which add `identifier` property for all `UITableViewCell`s and `UICollectionReusableView`s. They also create helper methods for `UITableView` and `UICollectionView` which automatically uses generated identifiers to registering and dequeuing cells.
+
+Example:
+``` swift
+class SomeCell: UICollectionViewCell {
+    // ...
+}
+
+let collectionView = UICollectionView(
+    frame: CGRect.zero,
+    collectionViewLayout: UICollectionViewFlowLayout()
+)
+collectionView.register(VineyardsCollectionViewCell.self)
+let cell = collectionView.dequeueReusableCell(
+    ofType: SomeCell.self,
+    forIndexPath: indexPath
+) // Note that cell already has SomeCell type, so you don't need to cast it
+
+```
