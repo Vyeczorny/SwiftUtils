@@ -7,6 +7,7 @@ Small pieces of code which I'm using in many of my projects.
 Simple class for creating and combining styles for UI controls.
 
 Example:
+
 ``` swift
 let labelTextStyle = Style<UILabel> { label in
     label.textColor = UIColor.lightGray
@@ -48,6 +49,7 @@ result.ifSuccess { value in
 A set of extensions, which add `identifier` property for all `UITableViewCell`s and `UICollectionReusableView`s. They also create helper methods for `UITableView` and `UICollectionView` which automatically uses generated identifiers to registering and dequeuing cells.
 
 Example:
+
 ``` swift
 class SomeCell: UICollectionViewCell {
     // ...
@@ -63,4 +65,19 @@ let cell = collectionView.dequeueReusableCell(
     forIndexPath: indexPath
 ) // Note that cell already has SomeCell type, so you don't need to cast it
 
+```
+
+## 4. UIStackView+Margins
+
+Simple extension which allows to add margins to arrangd subview.
+
+Example:
+
+```swift
+let stackView = UIStackView()
+let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 200.0, height: 80.0))
+stackView.addArrangedSubview(
+    view,
+    withMargins: UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 0.0)
+)
 ```
